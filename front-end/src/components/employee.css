@@ -1,0 +1,125 @@
+/* displaying employees */
+.emp-table td {
+    border: 1px solid #0000006c;
+    padding: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.container {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+.container h2 {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.emp-table th {
+    padding: 10px;
+    border: 1px solid #0000006c;
+    text-align: center;
+    background-color: rgb(101, 136, 189);
+    color: white;
+    font-size: 1rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.emp-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* action buttons */
+.action-btns{
+    display: flex; 
+}
+.action-btns button {
+    margin-right: 10px;
+    padding: .5rem;
+    border-radius: .4rem;
+    border-color: white;
+    width: 2rem;
+    flex: 1;
+    
+}
+.viewBtn{
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #1560bd;
+}
+
+.upBtn{
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #5D8AA8;
+}
+
+.delBtn{
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #ce2029;
+}
+
+/* adding employees */
+
+.form-container {
+    width: 40%;
+    margin: auto;
+    border: 1px solid black;
+    padding: 2rem;
+    background-color: #f8f8f8;
+   
+}
+
+legend {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    margin-bottom: 3rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:500;
+    font-size: 1.2rem;
+    margin: 5px;
+}
+
+input {
+    width: 90%;
+    padding: 9px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border-color: whitesmoke;
+}
+
+.btns button {
+    margin-right: 10px;
+    padding: .5rem;
+    width: 7rem;
+    border-radius: .4rem;
+    border-color: white;
+}
+
+.addBtn{
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #0080ff;
+}
+
+.cancelBtn{
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #ce2029;
+}
+
+.error {
+    color: red;
+}
