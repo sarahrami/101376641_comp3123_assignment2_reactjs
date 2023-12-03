@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  client:
+    image: frontend
+    ports:
+      - "3000:3000"
+    build:
+      context: ./client
+      dockerfile: ./Dockerfile
+    container_name: client-app
+    depends_on:
+      - backend
+    networks:
+      - mongo-data
+
+  backend:
+    container_name: server
+    build:
+      context: ./server
+      dockerfile: ./Dockerfile
+    ports:
+      - "3004:3004"
+    environment:
+      - SEVER_PORT=3004
+      - MONGODB_URI=mongodb://root:password@mongodb:27017/fall2023_comp3123
+    depends_on:
+      - mongodb
+    networks:
+      - mongo-data
+
+  mongodb:
+    container_name: mongodb-comp3123
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - ./mongodb/mongo-data:/data/db
+      - ./mongodb/init/docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    ports:
+      - "27018:27017"
+    networks:
+      - mongo-data
+
+networks:
+  mongo-data:
+    driver: bridge
+
